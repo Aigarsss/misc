@@ -664,10 +664,15 @@ rot13("SERR PBQR PNZC");
 // Array.prototype.join()
 
 function convertToRoman(num) {
-	console.log(num);
+	var array = num.toString().split("");
+	console.log(array);
+if (array[0] == 3) {
+	console.log("III");
+}
+
 };
 
-convertToRoman(12);
+convertToRoman(36);
 
 
 </script>
