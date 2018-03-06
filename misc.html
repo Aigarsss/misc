@@ -657,22 +657,60 @@ rot13("SERR PBQR PNZC");
 
 // CODECAMP Roman Numeral Converter 
 
+// function convertToRoman(num) {
+// //var array = num.toString().split("");
+// var seq = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+// var romans = ["M","CM", "D","CD", "C", "XC", "L", "XL", "X", "IX", "V","IV", "I"];
+// var result = "";
+// //console.log(result.join(""));
 
-// Roman Numerals
-// Array.prototype.splice()
-// Array.prototype.indexOf()
-// Array.prototype.join()
+// for (var i = 0; i<seq.length;i++) {
+// 	while (seq[i] <= num) {
+// 	result += romans[i];
+// 	num -= seq[i];
+// 	}
+// }
+// console.log(result);
 
-function convertToRoman(num) {
-	var array = num.toString().split("");
-	console.log(array);
-if (array[0] == 3) {
-	console.log("III");
+// };
+
+// convertToRoman(891);
+
+
+// codeamp Wherefore art thou
+
+function whatIsInAName(collection, source) {
+  // What's in a name?
+  var arr = [];
+  // Only change code below this line
+
+var theKey = Object.keys(source);
+
+	for (var i = 0; i < collection.length; i++) {
+		if (source[theKey] == collection[i][theKey]) {
+				arr.push(collection[i]);
+		} 
+		//console.log(collection.hasOwnProperty(i)); //ture or false
+		console.log(arr);
+		}
+
+
+ 		//console.log(collection.filter(x => x == source));
+ //console.log(Object.entries(collection)[0]);
+ //console.log(Object.keys(collection[0]));
+ //console.log(Object.values(collection)[2]);
+
+//console.log(Object.is(1, source));
+
+
+
+  // Only change code above this line
+  //console.log(arr);
 }
 
-};
+whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], 
+{ last: "Capulet" });
 
-convertToRoman(36);
 
 
 </script>
