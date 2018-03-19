@@ -15,28 +15,13 @@
 
 <script type="text/javascript">
 
-// Sum All Odd Fibonacci Numbers
+// Primes
 
-function sumFibs(num) {
-  
-	var array = [1,1];
-	var sum = 0;
-
-	for (let i = 1; i<=num; i++) {
-		array.push(array[array.length-2]+array[array.length-1]);
-	}
-	
-	for (let y = 0; y<array.length;y++) {
-		if ((array[y] % 2 != 0) & array[y]<=num ) {
-			sum += array[y];
-		}
-	}
-
-	return sum;
+function sumPrimes(num) {
+  return num;
 }
 
-console.log(sumFibs(4));
-
+console.log(sumPrimes(10));
 
 </script>
 
