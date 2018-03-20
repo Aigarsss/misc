@@ -18,10 +18,23 @@
 // Primes
 
 function sumPrimes(num) {
-  return num;
+
+var prime =[], sieve = [], i, j;
+
+for (i=2; i<=num;i++) {
+	if (!sieve[i]) {
+		prime.push(i);
+		for (j = i << 1;j<=num;j+=i) {
+			sieve[j] = true;
+		}
+	}
+}
+prime = prime.reduce((a,b) => a+b);
+
+return prime;
 }
 
-console.log(sumPrimes(10));
+console.log(sumPrimes(10)); //
 
 </script>
 
