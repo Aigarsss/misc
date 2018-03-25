@@ -15,69 +15,14 @@
 
 <script type="text/javascript">
 
-// Smallest Common Multiple
+// Finders keepers
 
-function smallestCommons(arr) {
-	var nArr = [], y, counter = 1, sum = 0;
-
-	arr = arr.sort((a,b) => a-b);
-	for (let i=arr[1];i>=arr[0];i--) {
-		nArr.push(i);
-	}
-//console.log(nArr);
-
-do {
-	sum = counter*nArr[0]*nArr[1] ;
-	for (y=2; y<nArr.length;y++) {
-			if (sum % nArr[y] !== 0) {
-				break;
-		}
-	}
-
-	counter++;		
-	console.log(counter + " this is counter");
-	console.log(y + " This is y");
-} while (y !== nArr.length);
-
-  return sum;
-
-
-  // arr.sort(function(a, b) {
-  //   return b - a;
-  // });
-
-  // // Create new array and add all values from greater to smaller from the
-  // // original array.
-  // var newArr = [];
-  // for (var i = arr[0]; i >= arr[1]; i--) {
-  //   newArr.push(i);
-  // }
-
-  // // Variables needed declared outside the loops.
-  // var quot = 0;
-  // var loop = 1;
-  // var n;
-
-  // // Run code while n is not the same as the array length.
-  // do {
-  //   quot = newArr[0] * loop * newArr[1];
-  //   for (n = 2; n < newArr.length; n++) {
-  //     if (quot % newArr[n] !== 0) {
-  //       break;
-  //     }
-  //   }
-
-  //   loop++;
-	// console.log(loop + " this is counter");
-	// console.log(n + " This is n");
-  // } while (n !== newArr.length);
-
-  // return quot;
-
+function findElement(arr, func) {
+	var nArr = arr.filter(func);
+  return nArr[0];
 }
 
-
-console.log(smallestCommons([1, 13])); //360360
+console.log(findElement([1, 2, 3, 4], function(num){ return num % 2 === 0; }));
 
 
 </script>
