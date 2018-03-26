@@ -15,14 +15,26 @@
 
 <script type="text/javascript">
 
-// Finders keepers
+// Drop it
 
-function findElement(arr, func) {
-	var nArr = arr.filter(func);
-  return nArr[0];
+function dropElements(arr, func) {
+  // Drop them elements.
+	var counter = 0;
+	var nArr = [];
+
+for (var i = 0; i<arr.length;i++) {
+	if (func(arr[i])) {
+		break;
+	}
 }
 
-console.log(findElement([1, 2, 3, 4], function(num){ return num % 2 === 0; }));
+console.log(i);
+nArr = arr.slice(i);
+
+  return nArr;
+}
+
+console.log(dropElements([1, 2, 3, 4], function(n) {return n >= 3;}));
 
 
 </script>
