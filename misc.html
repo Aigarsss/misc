@@ -15,26 +15,26 @@
 
 <script type="text/javascript">
 
-// Drop it
+// Steamroller
+function steamrollArray(arr) {
+  // I'm a steamroller, baby
+	var nAr = [];
 
-function dropElements(arr, func) {
-  // Drop them elements.
-	var counter = 0;
-	var nArr = [];
-
-for (var i = 0; i<arr.length;i++) {
-	if (func(arr[i])) {
-		break;
+var flatten = function(arg) {
+	if(!Array.isArray(arg)) {
+		nAr.push(arg)
+		} else {
+			for (let x=0;x<arg.length;x++) {
+				flatten(arg[x]);
+			}
+		}
 	}
+
+	arr.forEach(flatten);
+	 return nAr;
 }
 
-console.log(i);
-nArr = arr.slice(i);
-
-  return nArr;
-}
-
-console.log(dropElements([1, 2, 3, 4], function(n) {return n >= 3;}));
+console.log(steamrollArray([1, [2], [3, [[4]]]]));
 
 
 </script>
