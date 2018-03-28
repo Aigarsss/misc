@@ -15,23 +15,35 @@
 
 <script type="text/javascript">
 
-// Everything Be True
-function truthCheck(collection, pre) {
-  // Is everyone being true?
-	var flag = true;
+// Arguments Optional
+function addTogether() {
 
-collection.forEach(x=> {
-	if (!x[pre]) {
-		flag = false;
-		return flag;
-	} else return flag;
-});
+function isNum (num) {
+	if (typeof num !=='number') {
+		return undefined;
+	} else return num;
+};
 
-  return flag;
+	if (arguments.length>1) {
+		if (isNum(arguments[0]) === undefined || isNum(arguments[1]) === undefined) {
+			return undefined
+		} else return arguments[0]+arguments[1];
+	} else {
+		var y = arguments[0];
+		if (isNum(y)) {
+			return function(x) {
+				if (isNum(x) === undefined) {
+					return undefined;
+				} else
+				return y + x; 
+			}
+		}
+	}
+
 }
 
-console.log(truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex"));
 
+console.log(addTogether(2)(7));
 
 </script>
 
